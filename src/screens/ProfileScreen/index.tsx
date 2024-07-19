@@ -17,6 +17,7 @@ import ReloadSVG from "../../assets/icons/ReloadSVG";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FullScreenLoader } from "../../components";
 import colors from "../../theme";
+import BookSVG from "../../assets/icons/BookSVG";
 
 export default () => {
   const user = useAppSelector(selectUser);
@@ -60,6 +61,7 @@ export default () => {
       ) : (
         <FullScreenLoader />
       )}
+      <BookSVG width={750} height={730} />
     </SafeAreaView>
   );
 };

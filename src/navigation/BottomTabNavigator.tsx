@@ -10,7 +10,7 @@ import ExploreSVG from "../assets/icons/ExploreSVG";
 import colors from "../theme";
 import AwardSVG from "../assets/icons/AwardSVG";
 import ProfileSVG from "../assets/icons/ProfileSVG";
-import { Pressable, View } from "react-native";
+import { View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,17 +19,16 @@ export default () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarLabel: ({ focused }) =>
-          focused ? (
-            <View
-              style={{
-                backgroundColor: colors.accent,
-                borderRadius: 10,
-                width: 5,
-                height: 5,
-              }}
-            />
-          ) : null,
+        tabBarLabel: ({ focused }) => (
+          <View
+            style={{
+              backgroundColor: focused ? colors.accent : "transparent",
+              borderRadius: 10,
+              width: 5,
+              height: 5,
+            }}
+          />
+        ),
       }}
       initialRouteName="Home"
     >
