@@ -20,12 +20,14 @@ export const fetchUserProfile = createAsyncThunk(
   }
 );
 
+export type LastBook = {
+  book: Book;
+  currentChapter: number;
+} | null;
+
 interface InitialState {
   userProfile: User | null;
-  lastBook: {
-    book: Book;
-    currentChapter: number;
-  } | null;
+  lastBook: LastBook;
   personalSettings: {
     darkMode: boolean;
   };

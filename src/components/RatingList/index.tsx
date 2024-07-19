@@ -2,9 +2,10 @@ import React from "react";
 import { FlatList, View } from "react-native";
 import Divider from "../Divider";
 import RowBookItem from "../RowBookItem";
+import { Book } from "../../api/discover/types";
 
 interface RatingListProps {
-  data: any;
+  data: Book[];
 }
 
 export default ({ data }: RatingListProps) => {
@@ -34,15 +35,15 @@ export default ({ data }: RatingListProps) => {
       renderItem={({ item }) => {
         return (
           <View style={{ gap: 16 }}>
-            {item.data.map((el: any, i: number) => {
+            {item.data.map((el: Book, i: number) => {
               return (
                 <RowBookItem
                   key={i}
                   name={el.name}
                   image={el.image}
-                  position={el.position}
-                  reads={el.reads}
-                  genre={el.genre}
+                  position={el.position || 1}
+                  reads={el.reads || 0}
+                  genre={el.genre || ""}
                 />
               );
             })}

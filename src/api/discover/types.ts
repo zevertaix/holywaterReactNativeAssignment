@@ -6,3 +6,10 @@ export type Book = {
   reads?: number;
   image: string;
 };
+
+export type BookResponse = {
+  title: string;
+  isBanner?: boolean;
+  isTop?: boolean;
+  data: Book[];
+}[];

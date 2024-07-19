@@ -64,8 +64,8 @@ export default () => {
         ref={scrollRef}
         contentContainerStyle={{
           paddingHorizontal: 16,
-          paddingBottom: toolbarHeight,
           paddingTop: 10,
+          paddingBottom: toolbarHeight,
         }}
       >
         <Text style={{ fontSize: 16, color: colors.primaryText }}>
