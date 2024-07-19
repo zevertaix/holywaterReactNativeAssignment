@@ -2,6 +2,7 @@ const colors = {
   white: "#FFF",
   black: "#000",
   accent: "#6209D9",
+  disabled: "#5d0ec56b",
   lightAccent: "#6209d912",
   lightGrey: "#0e0e163b",
   primaryText: "#0E0E16",
