@@ -14,7 +14,7 @@ const ArrowRightSVG = ({
   </svg>
 `;
 
-  return <SvgXml xml={xml} width={width || 24} height={height || 24} />;
+  return <SvgXml xml={xml} width={width || 22} height={height || 22} />;
 };
 
 export default ArrowRightSVG;

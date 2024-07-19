@@ -2,7 +2,7 @@ import * as React from "react";
 import { SvgXml } from "react-native-svg";
 import colors from "../../theme";
 
-const BookmarkSVG = ({
+const ProfileSVG = ({
   width,
   height,
   color,
@@ -13,13 +13,23 @@ const BookmarkSVG = ({
 }) => {
   const xml = `
   <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M19.875 6V20L13.535 15.245L12.935 16.045L13.535 15.245C13.1439 14.9517 12.6061 14.9517 12.215 15.245L5.875 20V6C5.875 4.34315 7.21815 3 8.875 3H16.875C18.5319 3 19.875 4.34315 19.875 6Z" stroke=${
+  <g clip-path="url(#clip0_293_1611)">
+  <circle cx="12.1249" cy="23.06" r="8.06" stroke=${
     color || colors.primaryText
   } stroke-width="2"/>
-</svg>
+  </g>
+  <circle cx="12.125" cy="7.25" r="4.25" stroke=${
+    color || colors.primaryText
+  } stroke-width="2"/>
+  <defs>
+  <clipPath id="clip0_293_1611">
+  <rect width="20" height="8" fill="white" transform="translate(2.125 14)"/>
+  </clipPath>
+  </defs>
+  </svg>
 `;
 
   return <SvgXml xml={xml} width={width || 22} height={height || 22} />;
 };
 
-export default BookmarkSVG;
+export default ProfileSVG;
