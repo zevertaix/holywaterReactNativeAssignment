@@ -18,6 +18,7 @@ export default () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        headerShown: false,
         tabBarLabel: ({ focused }) =>
           focused ? (
             <View
