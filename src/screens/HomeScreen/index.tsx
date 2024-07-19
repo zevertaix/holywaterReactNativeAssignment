@@ -4,8 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import SearchSVG from "../../assets/icons/SearchSVG";
 import colors from "../../theme";
 import { BOOK_LIST_MOCK } from "../../mock/bookList";
-import { BookItem, CategoryHeader, Divider } from "../../components";
-import { FlatList } from "react-native-gesture-handler";
+import { CategoryHeader, Divider, HorizontalList } from "../../components";
+import RatingList from "../../components/RatingList";
 
 export default () => {
   return (
@@ -24,30 +24,22 @@ export default () => {
         keyExtractor={(item, index) => index + item.name}
         renderItem={() => null}
         ItemSeparatorComponent={() => <Divider vertical />}
-        renderSectionHeader={({ section: { title, isBanner, data } }) => {
+        renderSectionHeader={({
+          section: { title, isBanner, data, isTop },
+        }) => {
           return (
             <View>
-              {!isBanner && <CategoryHeader title={title} />}
-              <FlatList
-                data={data}
-                horizontal
-                ItemSeparatorComponent={() => <Divider />}
-                contentContainerStyle={{
-                  paddingHorizontal: 20,
-                  paddingVertical: 14,
-                }}
-                showsHorizontalScrollIndicator={false}
-                renderItem={({ item }) => {
-                  return (
-                    <BookItem
-                      name={item.name}
-                      url={item.image}
-                      isBanner={!!isBanner}
-                      price={item.price}
-                    />
-                  );
-                }}
-              />
+              {!isBanner && (
+                <CategoryHeader
+                  title={title}
+                  onPress={isTop ? null : () => null}
+                />
+              )}
+              {isTop ? (
+                <RatingList data={data} />
+              ) : (
+                <HorizontalList data={data} isBanner={!!isBanner} />
+              )}
             </View>
           );
         }}

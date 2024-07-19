@@ -5,14 +5,15 @@ import ArrowRightSVG from "../../assets/icons/ArrowRightSVG";
 
 interface CategoryHeaderProps {
   title: string;
+  onPress: null | (() => void);
 }
 
-export default ({ title }: CategoryHeaderProps) => {
+export default ({ title, onPress }: CategoryHeaderProps) => {
   return (
     <View style={{ paddingHorizontal: 20 }}>
-      <Pressable style={styles.button} onPress={() => null}>
+      <Pressable style={styles.button} onPress={onPress || (() => null)}>
         <Text style={styles.title}>{title}</Text>
-        <ArrowRightSVG />
+        {onPress && <ArrowRightSVG />}
       </Pressable>
     </View>
   );

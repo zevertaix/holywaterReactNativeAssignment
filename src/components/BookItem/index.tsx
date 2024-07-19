@@ -10,12 +10,12 @@ import colors from "../../theme";
 
 interface BookItemProps {
   name: string;
-  url: string;
+  image: string;
   isBanner: boolean;
   price: number;
 }
 
-export default ({ name, url, isBanner, price }: BookItemProps) => {
+export default ({ name, image, isBanner, price }: BookItemProps) => {
   const { width } = useWindowDimensions();
   const cardWidth = isBanner ? width - 80 : width / 2 - 40;
 
@@ -31,7 +31,7 @@ export default ({ name, url, isBanner, price }: BookItemProps) => {
       )}
 
       <Image
-        source={{ uri: url }}
+        source={{ uri: image }}
         style={{
           aspectRatio: isBanner ? 16 / 9 : 2 / 3,
           borderRadius: 8,

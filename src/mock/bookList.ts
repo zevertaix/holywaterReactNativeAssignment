@@ -86,4 +86,111 @@ export const BOOK_LIST_MOCK = [
       },
     ],
   },
+  {
+    title: "Top Series",
+    isTop: true,
+    data: [
+      {
+        name: "Man of Her Dreams",
+        price: 5,
+        position: 1,
+        genre: "funfiction",
+        reads: 476000,
+        image:
+          "https://s3-alpha-sig.figma.com/img/b864/8e44/3293cdad32e541b1ea0d19822b3c0de3?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lupAga~LdEJcIEGVt-fL7ndorPDlxpwuYv6Edc9pU81jDjL56DHMGj6hSw5opsiS1E2WKXGnsWM9zzQ7E0DohiB6m1ya1JpwgcYZdVvhxlTlJJjnOJ1jtIv9a5z45OTOgNgO3rz7f0qcrashYs4fPz4rTHVbWFNQLQoD53DilCo-bQG2mqaDbzfYxtiM41fyDTGzp1EZKoFgwkAm0rxqhyf8B7dMzP35AS26Qs~8PgyVsHD-au7WVRvBi4Ffr54hGaPbEx61k-45IvJWLX9nMS1fJfTnnutaXqKet2JjpJsWbcUAoYqJORxS2xjksn-zSedZpLK~6hs45EWE609e1Q__",
+      },
+      {
+        name: "Fall for Dylan Lemiere",
+        price: 10,
+        position: 2,
+        genre: "funfiction",
+        reads: 476000,
+        image:
+          "https://s3-alpha-sig.figma.com/img/efe0/0b6a/0b2d5547394dfc08206362b71d76dab5?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EkOO6icUoEUOATBQAlHbWTbC0aBtx48z6J5ayW~LlHT7qZv6xXScLl7T4yWIIEIaRi-JyEQzJhIfIyAYz7mhc1nGTjSmm-Dq-PlFpSNcAymnYsdfBXzvNnxef5oljpY8M55Gho-JcvqZXfPFGEFAUSjYHKa4UWAFIGN3HLqh-Ud4n5QzaE-qNoeILMaDT17Dgo8LCZX4ra070yDoJhilJmo3tWqsiIPRCrFTjUlqXOVVwzEsv95-4hK75y3koUPssJCh-Sn1fmAQ-xfKNvdoqHR~58kEHLE-vrBsAzIxfwKL6DUQ77Tqlfyx3FU6epV9j5k-crHYe3RA2oGlnZDFqA__",
+      },
+      {
+        name: "Not in the Contact",
+        price: 3,
+        position: 3,
+        genre: "funfiction",
+        reads: 476000,
+        image:
+          "https://s3-alpha-sig.figma.com/img/e4c4/0bbf/4dd086c213fa4548e58b001cf10fd947?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IlKe7ST~Wh-8aX7osO1hEuy~2nn8FvFTGcekIih86nWy0H7kDr~P0za86k1HNRQ0m2Qtbn2AQaeGmvPjejnRw0VblcTGy8jsY6sdIEroj~goljnLHz824FLkH6zLPyVWIzWnFQEtppmlFi6l4T59IUfdvjfY3ApAns-E2xBsbNqfnZ~dyXQjgGmyqnXBnjoczKXHf9M7MeiZ5q-3DLCuaSqROxSJzQY7C0BAN3yHa3zNBMPYmM3zZMyqeg1qCeh~xMIQDUa11WrVaPIFb38n6UT-ZHVlr776mE85qCC7NvoYKgDhcE3OZBcm~Tuk7UT1Dkp-QI01DFiu48FObDZcng__",
+      },
+
+      {
+        name: "HIS",
+        price: 5,
+        position: 4,
+        genre: "funfiction",
+        reads: 476000,
+        image:
+          "https://s3-alpha-sig.figma.com/img/6ae9/317f/02336be7090dac9e6c9036434947ab0d?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LSQhVcqlagudJU5KbYfF1ZkNdT5GgXTOfRGWI~EOpJAJRcXuVvr6gLv1ajU8nkGv8G039zAtEIdr~a6bIgTFKf-HKYm0ruhJ5sJMCSawsrbubcefAizm02w8glg5gG1AdMgbkp02r2mkKscwSJ78xDKEKYch9ko-Y4XC17KUgXCBOc4BflTHbbqhQTztMmwoRNqDVSxcXxbdIJ9SAZiSUItTE3zcKXtU1ZMrN5JPorShHF5UWvnAbWXmM6cCX5RjiAVGq7sIiMFlYzhsxEVbgFqEwdnZpYkRXq8MYPMyOg5MGMrKZuwKWSN2CRA4iZMXpajYipmw6NivuefKpp4ljA__",
+      },
+      {
+        name: "Under the Mountain Stars",
+        price: 10,
+        position: 5,
+        genre: "funfiction",
+        reads: 476000,
+        image:
+          "https://s3-alpha-sig.figma.com/img/2c27/199d/3c45f23bc860eb3415e795485dbef5eb?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gRSBRwGOKEeodgCTJItcW8ZpD-fWxD17n0AKOURkIT9iSVytc1MMlsg1msqvItgu3V36PxVe9VU~6CQRxgdH243HgWAZn-sXhgBWBpUz9JdjfjGaTyC0w1AmKs1g3lna9TdVh0GsdR3dnJf6YLdgZ63w1IeD29wj5~zr7MNX9H72mnbdho18qvCYyQdvovOJg~SGvRg3VMV0RGoGesYMs2EsMQ3bWt0~Nfs74l4H-v8yk1OF9ZuRjRw9Qltr3wT61tRwj9WI4SbxEV5nPlsTYBGku~pUazpoHXsxTd0DyKJOgLRUvtfmzCC48ktlpDDipjIjo~Ki36L217uOq-RZkQ__",
+      },
+      {
+        name: "Romeo Revenge",
+        price: 3,
+        position: 6,
+        genre: "funfiction",
+        reads: 476000,
+        image:
+          "https://s3-alpha-sig.figma.com/img/a647/3796/63c3a6a3bb793c3bc1f63ef661644343?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z0ClEACNqfz1G6TzQdfr7SGkqGS15WZsI1pFjo5PGSRwB--oSSoUyPbkE8HRMBYxXj8FW41HcThh9rTNx8UyoZbjRKpo9am4NzxJ~O7YI1hQ3R~-y0v1rBFQw8ric~JKfcTg7WrDfaLU5-aNyRbHFolSxT~aydG7Vv23wPe9pHwtAqZmh0V1h3jx6hbpcyBvpCcJmyephvwUgWnFocvp37O4hcsfca0ovhjkvNkYjFZnme4BWaOPzjBmZLLemxO5V74Ju4KfBzwW7EKLoPbK3eB~PFY8-oFQvn8uQQElwO2eTUjmDPRH6jfWeg27OmE9iRXsYg6KY0qtIbJbKQ5GFA__",
+      },
+    ],
+  },
+  {
+    title: "Authors You Might Know",
+    data: [
+      {
+        name: "Dragon’s Prize",
+        price: 5,
+        image:
+          "https://s3-alpha-sig.figma.com/img/2c27/199d/3c45f23bc860eb3415e795485dbef5eb?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gRSBRwGOKEeodgCTJItcW8ZpD-fWxD17n0AKOURkIT9iSVytc1MMlsg1msqvItgu3V36PxVe9VU~6CQRxgdH243HgWAZn-sXhgBWBpUz9JdjfjGaTyC0w1AmKs1g3lna9TdVh0GsdR3dnJf6YLdgZ63w1IeD29wj5~zr7MNX9H72mnbdho18qvCYyQdvovOJg~SGvRg3VMV0RGoGesYMs2EsMQ3bWt0~Nfs74l4H-v8yk1OF9ZuRjRw9Qltr3wT61tRwj9WI4SbxEV5nPlsTYBGku~pUazpoHXsxTd0DyKJOgLRUvtfmzCC48ktlpDDipjIjo~Ki36L217uOq-RZkQ__",
+      },
+      {
+        name: "Real Deal",
+        price: 10,
+        image:
+          "https://s3-alpha-sig.figma.com/img/a647/3796/63c3a6a3bb793c3bc1f63ef661644343?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z0ClEACNqfz1G6TzQdfr7SGkqGS15WZsI1pFjo5PGSRwB--oSSoUyPbkE8HRMBYxXj8FW41HcThh9rTNx8UyoZbjRKpo9am4NzxJ~O7YI1hQ3R~-y0v1rBFQw8ric~JKfcTg7WrDfaLU5-aNyRbHFolSxT~aydG7Vv23wPe9pHwtAqZmh0V1h3jx6hbpcyBvpCcJmyephvwUgWnFocvp37O4hcsfca0ovhjkvNkYjFZnme4BWaOPzjBmZLLemxO5V74Ju4KfBzwW7EKLoPbK3eB~PFY8-oFQvn8uQQElwO2eTUjmDPRH6jfWeg27OmE9iRXsYg6KY0qtIbJbKQ5GFA__",
+      },
+      {
+        name: "His blonde little secret",
+        price: 3,
+        image:
+          "https://s3-alpha-sig.figma.com/img/c921/5c21/4f4838b74f52d09caf0d3be5ea98c415?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hDNG805JR-GGQmweB6E9OHyiirZL2i8sRhcky2xCZyuZKtrNq5OpV81i3OvwBsJenWXOUMcQXc-tsSbZzRujUEIxwvF84DsH3AQK9jmp72BPRqnEdOY3PnHj8QgZRj2oJuy10qg~sCUv8rOPcekjeUfEDW-rLYlN63X6R6sTuiJc6dHj1a57grNNWA3YtnBA~qAs71~AjFBAMxI-lDYiJQ-L0tvY08ixsO1vDJQXL~Sad8xA92iJ2frGHD4CnW5Dvb6fYRsPvjgQgC4phR5Rx5dDt6NW~7YVZ-Rx2kJLv6-7Nw2vbDeGMWng2HKbdyGg3NMNOCH2X0RKnXlasi31Iw__",
+      },
+    ],
+  },
+  {
+    title: "Top romance",
+    data: [
+      {
+        name: "Snow Kissed",
+        price: 5,
+        image:
+          "https://s3-alpha-sig.figma.com/img/2bf6/8d52/5ae77ca137e9e8d21c78e1f17bcf947a?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FbIPj~Tn6ghjSjmhKAs~j2AIvJvHUguCPGLDlz~FCxFeZwS2ZMALIkO4tvrsXgJWGO3rdtt5m4OfjeOt4SyrziOY5nN2qJ1hLdc~XfJEbEpXiNwE5KrWIlvcFaUk2XUfiAhkgkvp-VYo7T7u9wQhqFLwelDVsHjpwnnqFwrsV79Q6AJLLUS1YlitE3V-KIT~dJyMFD8~37ilDqOY1dViWchWf2RGcmbgVjbLqoS43n03tzAjA6Wq-mYqTh-pWZIC9kjvQ5W1ynBBDl55Yas4775yT4TReQaTg2uVdLTvtZ7RTePkXwrzUBQuyhhrWMqFo3-tfzPMQEAJny~IYoapfQ__",
+      },
+      {
+        name: "The snow moon Healer",
+        price: 10,
+        image:
+          "https://s3-alpha-sig.figma.com/img/76d6/bb9c/70e57a48d5ab737466781d20f3a8aa92?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=m-itdVKz3lFGTQ-qHfKN4XwTiQkA5e45imtfw827yKcXkiqiLSQvuIDs4PnzMj~WRmDGIVWvl2LOmriu5lPMs7bicooUMwGYD1URLCBe9Zw7RyDFK1AY9EhfdJZfx7gkb3Z0wKkRZumJCMX9uULTa-f-Rl06nRnh4zBqpdRKONlE5QBnfk4x384bJqWkBUZz20yBIkCtCzG9IrGCeFqwMT1SqjfSNzTowy80NsyPgDMbFfKO1oG3d5tUnNrBmOOvZWbV4e421Aix-g1Uzfb3oPTnOJUPLIo~8SqcVTENZO2UKjIx3NSvFy-RCSZSw90QEvqYEnhKfUNcaRxkS1IrKg__",
+      },
+      {
+        name: "I Love You Since 1892",
+        price: 3,
+        image:
+          "https://s3-alpha-sig.figma.com/img/99e7/5220/61a50bf39bd1713f3f50f439865d5ee3?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Fg2lD09HUd3Wy3GZ7A~wgVoUu5cM8Zwo0zOMGa4-g9omye0gE60vC~IT0MaEFUSHxHUvrdlUgXsjm~vOPOX2P4kSEv50MPrZKp8IG5Qi5wT72rTAUjq5Tgq6DpL3rSeNQusq0S6Ffw7m1OjALlx1PBk6fuW4vEk4744ONNoKbcwSmI46fDZdUiOJq1H47NXGhJrS~7vd3dzI5s54nQyYBn8b-sihnQ081M-zQmr0w1NzgWmuWLgG~dfnOgX~iu87qL2TaMpEk7G4m0Gq97FzYuEBSO27X1rs9SNXRwkBgEvJEdF6jjEtMmALDWfzlykPp0iR5yxInZVX8FFB1A2CAg__",
+      },
+    ],
+  },
 ];
