@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import {
   Image,
+  Pressable,
   StyleSheet,
   Text,
   View,
@@ -13,14 +14,15 @@ interface BookItemProps {
   image: string;
   isBanner: boolean;
   price: number;
+  onPress: () => void;
 }
 
-export default ({ name, image, isBanner, price }: BookItemProps) => {
+export default ({ name, image, isBanner, price, onPress }: BookItemProps) => {
   const { width } = useWindowDimensions();
   const cardWidth = isBanner ? width - 80 : width / 2 - 40;
 
   return (
-    <View style={{ width: cardWidth }}>
+    <Pressable style={{ width: cardWidth }} onPress={onPress}>
       {isBanner && (
         <>
           <Text style={styles.priceLabel}>
@@ -43,7 +45,7 @@ export default ({ name, image, isBanner, price }: BookItemProps) => {
           <Text style={styles.nameLabel}>{name}</Text>
         </>
       )}
-    </View>
+    </Pressable>
   );
 };
 

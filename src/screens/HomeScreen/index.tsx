@@ -23,6 +23,7 @@ export default () => {
         stickySectionHeadersEnabled={false}
         keyExtractor={(item, index) => index + item.name}
         renderItem={() => null}
+        showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <Divider vertical />}
         renderSectionHeader={({
           section: { title, isBanner, data, isTop },

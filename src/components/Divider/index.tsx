@@ -11,6 +11,6 @@ export default ({ vertical }: DividerProps) => {
 
 const styles = StyleSheet.create({
   divider: {
-    width: 16,
+    width: 18,
   },
 });

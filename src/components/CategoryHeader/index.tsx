@@ -13,7 +13,7 @@ export default ({ title, onPress }: CategoryHeaderProps) => {
     <View style={{ paddingHorizontal: 20 }}>
       <Pressable style={styles.button} onPress={onPress || (() => null)}>
         <Text style={styles.title}>{title}</Text>
-        {onPress && <ArrowRightSVG />}
+        {onPress && <ArrowRightSVG width={18} height={18} />}
       </Pressable>
     </View>
   );
