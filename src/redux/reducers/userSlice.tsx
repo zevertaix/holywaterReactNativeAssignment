@@ -4,6 +4,7 @@ import { RootState } from "../store";
 import { fetchProfile } from "../../api/user";
 import { User } from "../../api/user/types";
 import sleep from "../../helpers/sleep";
+import { Book } from "../../api/discover/types";
 
 export const fetchUserProfile = createAsyncThunk(
   "user/userProfile",
@@ -21,6 +22,13 @@ export const fetchUserProfile = createAsyncThunk(
 
 interface InitialState {
   userProfile: User | null;
+  lastBook: {
+    book: Book;
+    currentChapter: number;
+  } | null;
+  personalSettings: {
+    darkMode: boolean;
+  };
   queryStatuses: {
     fetchProfile: boolean;
   };
@@ -28,6 +36,10 @@ interface InitialState {
 
 const initialState: InitialState = {
   userProfile: null,
+  lastBook: null,
+  personalSettings: {
+    darkMode: false,
+  },
   queryStatuses: {
     fetchProfile: false,
   },
@@ -39,6 +51,12 @@ export const userSlice = createSlice({
   reducers: {
     setUserProfile: (state, action) => {
       state.userProfile = action.payload;
+    },
+    setPersonalSettings: (state, action) => {
+      state.personalSettings = { ...state.personalSettings, ...action.payload };
+    },
+    setLastBook: (state, action) => {
+      state.lastBook = action.payload;
     },
   },
   extraReducers(builder) {
@@ -57,7 +75,9 @@ export const userSlice = createSlice({
 });
 
 export const selectUser = (state: RootState) => state.user.userProfile;
-export const selectQueryStatuses = (store: RootState) =>
-  store.user.queryStatuses;
+export const selectQueryStatuses = (state: RootState) =>
+  state.user.queryStatuses;
+export const selectLastBook = (state: RootState) => state.user.lastBook;
 
-export const { setUserProfile } = userSlice.actions;
+export const { setUserProfile, setPersonalSettings, setLastBook } =
+  userSlice.actions;

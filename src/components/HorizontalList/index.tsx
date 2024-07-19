@@ -4,14 +4,18 @@ import Divider from "../Divider";
 import BookItem from "../BookItem";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { StackParams } from "../../navigation/RootNavigator";
+import { Book } from "../../api/discover/types";
+import { useAppDispatch } from "../../redux/hooks";
+import { setLastBook } from "../../redux/reducers/userSlice";
 
 interface HorizontalListProps {
-  data: any;
+  data: Book[];
   isBanner: boolean;
 }
 
 export default ({ data, isBanner }: HorizontalListProps) => {
   const { navigate } = useNavigation<NavigationProp<StackParams>>();
+  const dispatch = useAppDispatch();
 
   return (
     <FlatList
@@ -26,7 +30,10 @@ export default ({ data, isBanner }: HorizontalListProps) => {
       renderItem={({ item }) => {
         return (
           <BookItem
-            onPress={() => navigate("BookDetails")}
+            onPress={() => {
+              dispatch(setLastBook(null));
+              navigate("BookDetails", { book: item });
+            }}
             name={item.name}
             image={item.image}
             isBanner={!!isBanner}

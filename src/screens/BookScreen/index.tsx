@@ -6,7 +6,12 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import CrossSVG from "../../assets/icons/CrossSVG";
-import { NavigationProp, useNavigation } from "@react-navigation/native";
+import {
+  NavigationProp,
+  RouteProp,
+  useNavigation,
+  useRoute,
+} from "@react-navigation/native";
 import { StackParams } from "../../navigation/RootNavigator";
 import GearSVG from "../../assets/icons/GearSVG";
 import ArrowLeftSVG from "../../assets/icons/ArrowLeftSVG";
@@ -14,12 +19,19 @@ import ArrowRightSVG from "../../assets/icons/ArrowRightSVG";
 import BurgerSVG from "../../assets/icons/BurgerSVG";
 import { CHAPTERS_MOCK } from "../../mock/chapters";
 import PrimaryButton from "../../components/PrimaryButton";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { selectLastBook, setLastBook } from "../../redux/reducers/userSlice";
 
 export default () => {
   const { goBack } = useNavigation<NavigationProp<StackParams>>();
+  const dispatch = useAppDispatch();
+  const lastBook = useAppSelector(selectLastBook);
+  const { params } = useRoute<RouteProp<StackParams>>();
   const { bottom: bottomSafeArea } = useSafeAreaInsets();
   const scrollRef = useRef<ScrollView>(null);
-  const [currentChapter, setCurrentChapter] = useState(1);
+  const [currentChapter, setCurrentChapter] = useState(
+    lastBook?.currentChapter || 1
+  );
   const [toolbarHeight, setToolbarHeight] = useState(0);
 
   const onPressTouch = () => {
@@ -32,7 +44,14 @@ export default () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Pressable onPress={() => goBack()}>
+        <Pressable
+          onPress={() => {
+            if (currentChapter !== CHAPTERS_MOCK.length) {
+              dispatch(setLastBook({ book: params?.book, currentChapter }));
+            }
+            goBack();
+          }}
+        >
           <CrossSVG />
         </Pressable>
         <Text style={{ fontSize: 22, fontWeight: "800" }}>
@@ -106,7 +125,7 @@ const styles = StyleSheet.create({
   },
   text: {},
   header: {
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     borderColor: colors.divider,
     paddingHorizontal: 20,
     flexDirection: "row",
@@ -122,7 +141,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     paddingVertical: 16,
-    borderTopWidth: 2,
+    borderTopWidth: 1,
     borderColor: colors.divider,
     backgroundColor: colors.white,
   },
