@@ -5,6 +5,7 @@ const colors = {
   primaryText: "#0E0E16",
   secondaryText: "#50515E",
   tertiaryText: "#848694",
+  divider: "#F0F1F7",
 };
 
 export default colors;

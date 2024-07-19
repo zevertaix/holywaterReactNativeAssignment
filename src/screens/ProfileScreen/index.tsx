@@ -23,6 +23,12 @@ export default () => {
   const statuses = useAppSelector(selectQueryStatuses);
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    if (!user) {
+      dispatch(fetchUserProfile());
+    }
+  }, [user]);
+
   return (
     <SafeAreaView edges={["top"]} style={styles.container}>
       <View style={styles.header}>
