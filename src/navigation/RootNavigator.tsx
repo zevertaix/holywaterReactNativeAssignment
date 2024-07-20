@@ -25,6 +25,7 @@ export default () => {
         name="BookDetails"
         component={BookScreen}
         options={{
+          gestureEnabled: false,
           headerShown: false,
         }}
       />

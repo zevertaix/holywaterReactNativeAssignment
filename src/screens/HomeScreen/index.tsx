@@ -1,5 +1,12 @@
 import React, { useEffect } from "react";
-import { Pressable, SectionList, StyleSheet, Text, View } from "react-native";
+import {
+  Pressable,
+  RefreshControl,
+  SectionList,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SearchSVG from "../../assets/icons/SearchSVG";
 import colors from "../../theme";
@@ -17,37 +24,58 @@ import { selectLastBook } from "../../redux/reducers/userSlice";
 import { BookResponse } from "../../api/discover/types";
 import {
   fetchBooksList,
+  selectBookList,
   selectBookStatuses,
 } from "../../redux/reducers/booksSlice";
 
 export default () => {
   const lastBook = useAppSelector(selectLastBook);
+  const bookList = useAppSelector(selectBookList);
   const queryStatuses = useAppSelector(selectBookStatuses);
-  const [bookList, setBookList] = React.useState<BookResponse>([]);
+  const [list, setList] = React.useState<BookResponse>([]);
   const dispatch = useAppDispatch();
 
-  const getNewsletters = async () => {
-    const response = await dispatch(fetchBooksList()).unwrap();
-    setBookList(response);
+  const getBooks = async () => {
+    dispatch(fetchBooksList());
   };
 
   useEffect(() => {
-    getNewsletters();
+    if (bookList) {
+      setList(bookList);
+    }
+  }, [bookList]);
+
+  useEffect(() => {
+    getBooks();
   }, []);
 
   return (
     <SafeAreaView edges={["top"]} style={styles.container}>
-      {queryStatuses.booksLoading && <FullScreenLoader />}
       <View style={styles.header}>
         <View style={{ alignItems: "flex-end" }}>
           <Pressable onPress={() => null}>
             <SearchSVG width={24} height={24} />
           </Pressable>
         </View>
-        <Text style={styles.title}>Discover</Text>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Text style={styles.title}>Discover</Text>
+          {queryStatuses?.booksLoading && (
+            <Text
+              style={{ fontSize: 12, fontWeight: "500", color: colors.accent }}
+            >
+              Updating...
+            </Text>
+          )}
+        </View>
       </View>
       <SectionList
-        sections={bookList}
+        sections={list}
         stickySectionHeadersEnabled={false}
         keyExtractor={(item, index) => index + item.name}
         renderItem={() => null}

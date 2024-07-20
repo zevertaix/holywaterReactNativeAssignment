@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import colors from "../../theme";
 import { kFormatter } from "../../helpers/formatters";
 
@@ -9,11 +9,22 @@ interface RowBookItemProps {
   position: number;
   reads: number;
   genre: string;
+  onPress: () => void;
 }
 
-export default ({ name, image, position, reads, genre }: RowBookItemProps) => {
+export default ({
+  name,
+  image,
+  position,
+  reads,
+  genre,
+  onPress,
+}: RowBookItemProps) => {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
+    <Pressable
+      style={{ flexDirection: "row", alignItems: "center" }}
+      onPress={onPress}
+    >
       <Image
         source={{ uri: image }}
         style={{ aspectRatio: 2 / 3, height: 120, borderRadius: 4 }}
@@ -41,6 +52,6 @@ export default ({ name, image, position, reads, genre }: RowBookItemProps) => {
           {kFormatter(reads)}
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
 };
