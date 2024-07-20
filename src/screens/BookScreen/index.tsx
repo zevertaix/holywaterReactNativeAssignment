@@ -53,6 +53,8 @@ export default () => {
           onPress={() => {
             if (currentChapter !== CHAPTERS_MOCK.length) {
               dispatch(setLastBook({ book: params?.book, currentChapter }));
+            } else {
+              dispatch(setLastBook(null));
             }
             goBack();
           }}
