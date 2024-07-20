@@ -5,3 +5,4 @@ export { default as Divider } from "./Divider";
 export { default as HorizontalList } from "./HorizontalList";
 export { default as RowBookItem } from "./RowBookItem";
 export { default as LastBookItem } from "./LastBookItem";
+export { default as CImage } from "./CImage";

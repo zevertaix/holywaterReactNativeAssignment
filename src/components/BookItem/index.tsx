@@ -1,13 +1,7 @@
-import React, { useMemo } from "react";
-import {
-  Image,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import React from "react";
+import { Pressable, StyleSheet, Text, useWindowDimensions } from "react-native";
 import colors from "../../theme";
+import CImage from "../CImage";
 
 interface BookItemProps {
   name: string;
@@ -32,8 +26,8 @@ export default ({ name, image, isBanner, price, onPress }: BookItemProps) => {
         </>
       )}
 
-      <Image
-        source={{ uri: image }}
+      <CImage
+        url={image}
         style={{
           aspectRatio: isBanner ? 16 / 9 : 2 / 3,
           borderRadius: 8,

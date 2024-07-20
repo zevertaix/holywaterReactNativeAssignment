@@ -1,7 +1,8 @@
 import React from "react";
-import { Image, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import colors from "../../theme";
 import { kFormatter } from "../../helpers/formatters";
+import CImage from "../CImage";
 
 interface RowBookItemProps {
   name: string;
@@ -25,8 +26,8 @@ export default ({
       style={{ flexDirection: "row", alignItems: "center" }}
       onPress={onPress}
     >
-      <Image
-        source={{ uri: image }}
+      <CImage
+        url={image}
         style={{ aspectRatio: 2 / 3, height: 120, borderRadius: 4 }}
       />
       <Text
