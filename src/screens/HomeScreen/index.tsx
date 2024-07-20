@@ -74,6 +74,7 @@ export default () => {
         renderItem={() => null}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <Divider vertical />}
+        contentContainerStyle={lastBook && { paddingBottom: 20 }}
         renderSectionHeader={({
           section: { title, isBanner, data, isTop },
         }) => {
