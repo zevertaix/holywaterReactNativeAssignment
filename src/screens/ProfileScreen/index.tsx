@@ -20,9 +20,9 @@ import colors from "../../theme";
 import BookSVG from "../../assets/icons/BookSVG";
 
 export default () => {
+  const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
   const statuses = useAppSelector(selectQueryStatuses);
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (!user) {

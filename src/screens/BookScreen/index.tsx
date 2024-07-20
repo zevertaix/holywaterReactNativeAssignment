@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import colors from "../../theme";
 import {
@@ -34,17 +34,22 @@ export default () => {
   );
   const [toolbarHeight, setToolbarHeight] = useState(0);
 
-  const onPressTouch = () => {
+  const smoothScroll = () => {
     scrollRef.current?.scrollTo({
       y: 0,
       animated: true,
     });
   };
 
+  useEffect(() => {
+    smoothScroll();
+  }, [currentChapter]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Pressable
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           onPress={() => {
             if (currentChapter !== CHAPTERS_MOCK.length) {
               dispatch(setLastBook({ book: params?.book, currentChapter }));
@@ -76,7 +81,6 @@ export default () => {
             title="Next Chapter"
             onPress={() => {
               setCurrentChapter(currentChapter + 1);
-              onPressTouch();
             }}
           />
         )}

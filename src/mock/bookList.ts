@@ -13,7 +13,7 @@ export const BOOK_LIST_MOCK = [
         name: "Special Event",
         price: 4,
         image:
-          "https://lh3.googleusercontent.com/proxy/UvZojNC6O2CAbRBmjScRoxRPNfs4DCMCyfqxJXiR39LMmOaDngRCIoqTTusPPZJxLnQPyL_1XzWeO_W8tVsvk2M",
+          "https://i0.wp.com/bookstacked.com/wp-content/uploads/2016/07/Half-Blood-Prince-American-Dust-Jacket.jpg",
       },
     ],
   },

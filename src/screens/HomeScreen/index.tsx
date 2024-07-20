@@ -51,6 +51,7 @@ export default () => {
 
   return (
     <SafeAreaView edges={["top"]} style={styles.container}>
+      {!bookList && <FullScreenLoader />}
       <View style={styles.header}>
         <View style={{ alignItems: "flex-end" }}>
           <Pressable onPress={() => null}>
@@ -65,7 +66,7 @@ export default () => {
           }}
         >
           <Text style={styles.title}>Discover</Text>
-          {queryStatuses?.booksLoading && (
+          {queryStatuses?.booksLoading && bookList && (
             <Text
               style={{ fontSize: 12, fontWeight: "500", color: colors.accent }}
             >

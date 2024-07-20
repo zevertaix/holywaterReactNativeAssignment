@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Platform } from "react-native";
 import { RootState } from "../store";
 import { fetchProfile } from "../../api/user";
 import { User } from "../../api/user/types";
@@ -28,9 +27,6 @@ export type LastBook = {
 interface InitialState {
   userProfile: User | null;
   lastBook: LastBook;
-  personalSettings: {
-    darkMode: boolean;
-  };
   queryStatuses: {
     fetchProfile: boolean;
   };
@@ -39,9 +35,6 @@ interface InitialState {
 const initialState: InitialState = {
   userProfile: null,
   lastBook: null,
-  personalSettings: {
-    darkMode: false,
-  },
   queryStatuses: {
     fetchProfile: false,
   },
@@ -53,9 +46,6 @@ export const userSlice = createSlice({
   reducers: {
     setUserProfile: (state, action) => {
       state.userProfile = action.payload;
-    },
-    setPersonalSettings: (state, action) => {
-      state.personalSettings = { ...state.personalSettings, ...action.payload };
     },
     setLastBook: (state, action) => {
       state.lastBook = action.payload;
@@ -81,5 +71,4 @@ export const selectQueryStatuses = (state: RootState) =>
   state.user.queryStatuses;
 export const selectLastBook = (state: RootState) => state.user.lastBook;
 
-export const { setUserProfile, setPersonalSettings, setLastBook } =
-  userSlice.actions;
+export const { setUserProfile, setLastBook } = userSlice.actions;
