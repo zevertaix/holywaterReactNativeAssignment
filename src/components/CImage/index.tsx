@@ -10,7 +10,6 @@ export default ({ url, ...rest }: CImageProps & FastImageProps) => (
       uri: url,
       priority: FastImage.priority.normal,
     }}
-    // resizeMode={FastImage.resizeMode.contain}
     {...rest}
   />
 );

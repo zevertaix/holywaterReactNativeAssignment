@@ -21,10 +21,7 @@ export default ({ lastBook }: LastBookItem) => {
       }
     >
       <View style={styles.content}>
-        <Image
-          source={{ uri: lastBook?.book.image }}
-          style={{ aspectRatio: 2 / 3, height: 50, borderRadius: 4 }}
-        />
+        <Image source={{ uri: lastBook?.book.image }} style={styles.image} />
         <View style={{ marginLeft: 12 }}>
           <Text style={styles.continueLabel}>Continue reading</Text>
           <Text style={styles.title}>{lastBook?.book.name}</Text>
@@ -65,5 +62,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     flex: 1,
+  },
+  image: {
+    aspectRatio: 2 / 3,
+    height: 50,
+    borderRadius: 4,
   },
 });

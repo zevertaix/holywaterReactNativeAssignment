@@ -1,9 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import BottomTabNavigator from "./BottomTabNavigator";
 import { BookScreen } from "../screens";
-import { Pressable } from "react-native";
-import CrossSVG from "../assets/icons/CrossSVG";
-import colors from "../theme";
 import { Book } from "../api/discover/types";
 
 const Stack = createStackNavigator<StackParams>();

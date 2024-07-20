@@ -1,16 +1,8 @@
 import React, { useEffect } from "react";
-import {
-  Pressable,
-  RefreshControl,
-  SectionList,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Pressable, SectionList, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SearchSVG from "../../assets/icons/SearchSVG";
 import colors from "../../theme";
-import { BOOK_LIST_MOCK } from "../../mock/bookList";
 import {
   CategoryHeader,
   Divider,

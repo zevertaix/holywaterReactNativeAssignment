@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import Divider from "../Divider";
 import RowBookItem from "../RowBookItem";
 import { Book } from "../../api/discover/types";
@@ -33,10 +33,7 @@ export default ({ data }: RatingListProps) => {
       data={getRaitedBooks()}
       horizontal
       ItemSeparatorComponent={() => <Divider />}
-      contentContainerStyle={{
-        paddingHorizontal: 20,
-        paddingVertical: 14,
-      }}
+      contentContainerStyle={styles.list}
       showsHorizontalScrollIndicator={false}
       renderItem={({ item }) => {
         return (
@@ -63,3 +60,10 @@ export default ({ data }: RatingListProps) => {
     />
   );
 };
+
+const styles = StyleSheet.create({
+  list: {
+    paddingHorizontal: 20,
+    paddingVertical: 14,
+  },
+});

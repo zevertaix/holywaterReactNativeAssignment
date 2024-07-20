@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import Divider from "../Divider";
 import BookItem from "../BookItem";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
@@ -22,10 +22,7 @@ export default ({ data, isBanner }: HorizontalListProps) => {
       data={data}
       horizontal
       ItemSeparatorComponent={() => <Divider />}
-      contentContainerStyle={{
-        paddingHorizontal: 20,
-        paddingVertical: 14,
-      }}
+      contentContainerStyle={styles.list}
       showsHorizontalScrollIndicator={false}
       renderItem={({ item }) => {
         return (
@@ -44,3 +41,10 @@ export default ({ data, isBanner }: HorizontalListProps) => {
     />
   );
 };
+
+const styles = StyleSheet.create({
+  list: {
+    paddingHorizontal: 20,
+    paddingVertical: 14,
+  },
+});
