@@ -61,7 +61,9 @@ export default () => {
       ) : (
         <FullScreenLoader />
       )}
-      <BookSVG width={750} height={730} />
+      <View style={styles.floatContainer}>
+        <BookSVG width={750} height={730} />
+      </View>
     </SafeAreaView>
   );
 };
@@ -95,5 +97,9 @@ const styles = StyleSheet.create({
     height: 30,
     alignItems: "center",
     justifyContent: "center",
+  },
+  floatContainer: {
+    position: "absolute",
+    bottom: 0,
   },
 });
